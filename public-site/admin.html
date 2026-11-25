@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b30">
+  <title>إدارة الموقع | كش مات</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="index.html#overview"><span class="mark" aria-hidden="true">♞</span><span>كش مات</span><small>CHESS PORTAL</small></a>
+    <nav class="nav" aria-label="روابط الموقع"><a href="index.html#overview">نظرة عامة</a><a href="index.html#rankings">التصنيفات</a><a href="index.html#news">آخر الأخبار</a></nav>
+    <a class="admin-link" href="index.html">العودة للموقع <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="wrap admin-page">
+    <section class="admin-top"><span class="eyebrow eyebrow-dark">إدارة الموقع</span><h1>لوحة تحكم تجريبية</h1>
+      <div class="demo-alert"><strong>واجهة فقط:</strong> هذه النسخة منشورة كواجهة ثابتة. تسجيل الدخول، إضافة الأخبار، وتعديل المباريات غير متصلة بخادم ولا تحفظ أي بيانات.</div>
+    </section>
+    <section class="card login-card" aria-labelledby="login-title">
+      <span class="tag">نموذج شكلي</span><h1 id="login-title">دخول الإدارة</h1><p class="dim">حقول للمعاينة فقط — لا تُرسل بياناتك هنا.</p>
+      <form id="demo-login">
+        <label for="email">البريد الإلكتروني<input id="email" name="email" type="email" autocomplete="off" placeholder="admin@example.com"></label>
+        <label for="password">كلمة المرور<input id="password" name="password" type="password" autocomplete="new-password" placeholder="••••••••"></label>
+        <button class="btn btn-green" type="submit">معاينة تسجيل الدخول</button>
+      </form>
+      <div id="demo-toast" class="demo-toast" role="status">للتوضيح فقط: لم يتم تسجيل الدخول أو إرسال/حفظ المعلومات.</div>
+      <p class="source-foot">للعودة، استخدم تبويبات الموقع بالأعلى.</p>
+    </section>
+    <section class="admin-dashboard">
+      <div class="section-head"><div><span class="eyebrow eyebrow-dark">شكل لوحة التحكم</span><h2>إدارة المحتوى</h2><p class="sub">عرض توضيحي للعناصر التي قد تُدار لاحقاً عند إضافة خادم.</p></div><span class="tag">غير متصل</span></div>
+      <div class="admin-stats">
+        <article class="card stat-card"><strong>02</strong><span>بطاقات أخبار تجريبية</span></article>
+        <article class="card stat-card"><strong>01</strong><span>بطاقة موعد بطولة</span></article>
+        <article class="card stat-card"><strong>—</strong><span>التحديث الآلي: غير مفعّل</span></article>
+      </div>
+      <article class="card fake-form">
+        <span class="tag">نموذج واجهة فقط</span><h3>إضافة خبر تجريبي</h3>
+        <form id="demo-news"><label>عنوان الخبر<input type="text" placeholder="عنوان الخبر"></label><label>ملخص<textarea placeholder="نص موجز"></textarea></label><button class="btn btn-outline" type="submit">معاينة زر الإضافة</button></form>
+        <div id="news-toast" class="demo-toast" role="status">هذا زر توضيحي فقط؛ لم تتم إضافة خبر أو حفظ أي تغيير.</div>
+      </article>
+    </section>
+  </main>
+  <footer class="wrap footer"><div><strong>كش مات</strong> — مساحة عربية لمتابعة الشطرنج.</div><div class="footer-note">هذه صفحة استعراضية غير موصولة بخادم.</div></footer>
+  <script>
+    for (const [formId, toastId] of [['demo-login','demo-toast'],['demo-news','news-toast']]) {
+      document.getElementById(formId).addEventListener('submit', event => {
+        event.preventDefault();
+        document.getElementById(toastId).classList.add('visible');
+      });
+    }
+  </script>
+</body>
+</html>
